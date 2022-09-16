@@ -53,8 +53,7 @@ def test_wallet_raises_insufficient_amount_exception_on_low_balance(empty_wallet
         (10, 3, 7)
     ]
 )
-def test_transactions(earned, spent, expected):
-    wallet = Wallet()
-    wallet.add_cash(earned)
-    wallet.spend_cash(spent)
-    assert wallet.balance == expected
+def test_transactions(empty_wallet, earned, spent, expected):
+    empty_wallet.add_cash(earned)
+    empty_wallet.spend_cash(spent)
+    assert empty_wallet.balance == expected
